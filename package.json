@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "dev": "vite --open",
-    "preview": "vite preview"
+    "build": "rm -rf dist && mkdir dist && cp index.html robots.txt sitemap.xml llms.txt dist/ && cp -R css js images fonts favicons splash dist/",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "wrangler": "^4.120.1"
   }
 }
