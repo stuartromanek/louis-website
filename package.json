@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite --open",
     "build": "rm -rf dist && mkdir dist && cp index.html robots.txt sitemap.xml llms.txt dist/ && cp -R css js images fonts favicons splash dist/",
+    "postinstall": "npm run build",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy"
   },
