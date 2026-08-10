@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Louis — Yoto MYO from YouTube | Download for Mac &amp; Windows</title>
+    <meta
+      name="description"
+      content="Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download the desktop app for macOS and Windows, or self-host with Docker."
+    />
+    <meta name="author" content="Stuart Romanek" />
+    <meta name="theme-color" content="#FFC5C8" />
+    <link rel="canonical" href="https://louis.romanek.us/" />
+    <link rel="me" href="https://github.com/stuartromanek/louis" />
+    <link rel="me" href="https://romanek.us" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Louis" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://louis.romanek.us/" />
+    <meta
+      property="og:title"
+      content="Louis — Yoto MYO from YouTube | Download for Mac &amp; Windows"
+    />
+    <meta
+      property="og:description"
+      content="Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker."
+    />
+    <meta property="og:image" content="https://louis.romanek.us/images/louis-og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Louis turns YouTube into audio playlists you can save to your Yoto Make Your Own cards."
+    />
+
+    <!-- Twitter: summary_large_image (wide). Square asset: /images/louis-twitter-square.png for summary cards. -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Louis — Yoto MYO from YouTube | Download for Mac &amp; Windows"
+    />
+    <meta
+      name="twitter:description"
+      content="Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker."
+    />
+    <meta name="twitter:image" content="https://louis.romanek.us/images/louis-twitter-wide.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Louis turns YouTube into audio playlists you can save to your Yoto Make Your Own cards."
+    />
+
+    <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicons/manifest.json" />
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://louis.romanek.us/#website",
+            "url": "https://louis.romanek.us/",
+            "name": "Louis",
+            "description": "Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker.",
+            "publisher": { "@id": "https://romanek.us/#person" },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://louis.romanek.us/#webpage",
+            "url": "https://louis.romanek.us/",
+            "name": "Louis — Yoto MYO from YouTube",
+            "isPartOf": { "@id": "https://louis.romanek.us/#website" },
+            "about": { "@id": "https://louis.romanek.us/#app" },
+            "description": "Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker.",
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://louis.romanek.us/images/louis-og.png",
+              "width": 1200,
+              "height": 630
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://louis.romanek.us/#app",
+            "name": "Louis",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "macOS, Windows",
+            "description": "A desktop and self-hosted app that turns YouTube into audio for Yoto Make Your Own (MYO) cards. Searches YouTube, builds playlists, downloads and transcodes audio, and saves to MYO cards.",
+            "url": "https://louis.romanek.us/",
+            "downloadUrl": "https://github.com/stuartromanek/louis/releases/latest",
+            "installUrl": "https://github.com/stuartromanek/louis/releases/latest",
+            "softwareHelp": "https://github.com/stuartromanek/louis/blob/main/docs/DESKTOP.md",
+            "author": { "@id": "https://romanek.us/#person" },
+            "creator": { "@id": "https://romanek.us/#person" },
+            "image": "https://louis.romanek.us/images/louis-og.png",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://romanek.us/#person",
+            "name": "Stuart Romanek",
+            "url": "https://romanek.us",
+            "sameAs": ["https://github.com/stuartromanek", "https://github.com/stuartromanek/louis"]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://louis.romanek.us/#howto-mac",
+            "name": "Installing Louis on macOS",
+            "description": "Install the unsigned Louis desktop app on macOS, clear Gatekeeper quarantine, and open the app.",
+            "url": "https://louis.romanek.us/#install-mac",
+            "totalTime": "PT10M",
+            "tool": [
+              { "@type": "HowToTool", "name": "Louis macOS disk image (.dmg) from GitHub Releases" },
+              { "@type": "HowToTool", "name": "Terminal" }
+            ],
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Find the downloaded disk image",
+                "text": "Download Louis-…-arm64.dmg for Apple Silicon or Louis-…-x64.dmg for Intel from GitHub Releases, then double-click the .dmg.",
+                "url": "https://louis.romanek.us/#install-mac",
+                "image": "https://louis.romanek.us/images/install/mac/01-dmg-downloaded.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Drag Louis into Applications",
+                "text": "Drag Louis.app onto the Applications folder in the disk image window, wait for the copy to finish, then eject the disk image.",
+                "image": "https://louis.romanek.us/images/install/mac/02-dmg-drag-to-applications.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Open Applications → Utilities",
+                "text": "Because Louis is unsigned, open the Applications folder, then open Utilities.",
+                "image": "https://louis.romanek.us/images/install/mac/03-applications-utilities.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Open Terminal",
+                "text": "Inside Utilities, open Terminal.",
+                "image": "https://louis.romanek.us/images/install/mac/04-utilities-terminal.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Clear the quarantine flag",
+                "text": "Run: xattr -cr /Applications/Louis.app. If Louis is installed elsewhere, use that full path instead.",
+                "image": "https://louis.romanek.us/images/install/mac/05-terminal-xattr.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Right-click Louis and choose Open",
+                "text": "In Applications, Control-click or right-click Louis and choose Open. Confirm Open if macOS asks again.",
+                "image": "https://louis.romanek.us/images/install/mac/06-applications-open.webp"
+              }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "@id": "https://louis.romanek.us/#howto-windows",
+            "name": "Installing Louis on Windows",
+            "description": "Install the unsigned Louis Windows NSIS setup through Edge and SmartScreen warnings.",
+            "url": "https://louis.romanek.us/#install-windows",
+            "totalTime": "PT10M",
+            "tool": [
+              { "@type": "HowToTool", "name": "Louis-Setup Windows installer (.exe) from GitHub Releases" },
+              { "@type": "HowToTool", "name": "Microsoft Edge" }
+            ],
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Keep the uncommon download",
+                "text": "After downloading Louis-Setup-….exe, open Edge Downloads, click the three dots, and choose Keep — do not delete the file.",
+                "image": "https://louis.romanek.us/images/install/win/01-edge-download-warning.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Keep anyway",
+                "text": "In the trust dialog, ignore Delete. Open the three-dot menu next to Delete and choose Keep anyway.",
+                "image": "https://louis.romanek.us/images/install/win/02-edge-keep-anyway.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Open the installer and click More info",
+                "text": "Open the .exe. On the Windows protected your PC screen, do not click Don’t run — click More info.",
+                "image": "https://louis.romanek.us/images/install/win/03-smartscreen-blocked.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Run anyway",
+                "text": "Click Run anyway. Publisher shows as Unknown because builds are unsigned.",
+                "image": "https://louis.romanek.us/images/install/win/04-smartscreen-run-anyway.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Choose who can use Louis",
+                "text": "Prefer Only for me, then click Next.",
+                "image": "https://louis.romanek.us/images/install/win/05-installer-who-for.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Install",
+                "text": "Leave the default install folder and click Install.",
+                "image": "https://louis.romanek.us/images/install/win/06-installer-location.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Wait for Installing",
+                "text": "Leave the Setup window open until the progress bar finishes.",
+                "image": "https://louis.romanek.us/images/install/win/07-installer-progress.webp"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Finish and run Louis",
+                "text": "Leave Run Louis checked and click Finish to launch first-time setup.",
+                "image": "https://louis.romanek.us/images/install/win/08-installer-finish.webp"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://louis.romanek.us/#faq",
+            "url": "https://louis.romanek.us/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Louis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Louis is a desktop (and self-hosted) app that turns YouTube into audio for your Yoto Make Your Own (MYO) cards. You search YouTube, arrange a playlist, then save — Louis downloads, transcodes, and loads the audio onto blank MYO cards you already own."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What do I need before I start?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Mac or Windows PC (or Docker), a Yoto account with MYO cards, a free YouTube Data API v3 key from Google Cloud, and — for Yoto sign-in — either Louis’s Use default client button or your own public PKCE client from yoto.dev."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Louis free? Who is it for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Louis is an open-source project you can download and run yourself. Personal use only. You are responsible for complying with YouTube’s Terms of Service and applicable law when downloading audio."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Desktop app or Docker — what’s the difference?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Same Louis experience either way. The desktop app (macOS / Windows) bundles a local server plus yt-dlp and ffmpeg — no Docker required. Prefer containers? Pull the same release version from GHCR (ghcr.io/stuartromanek/louis). Desktop listens on http://127.0.0.1:4010; Docker/dev typically uses port 4000."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which installer should I download?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "macOS Apple Silicon → Louis-…-arm64.dmg. macOS Intel → Louis-…-x64.dmg. Windows → Louis-Setup-….exe. Installers live on each GitHub Release (same vX.Y.Z as the Docker image)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why does macOS or Windows warn me the app is unsafe?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Builds are currently unsigned. Gatekeeper (Mac) and SmartScreen (Windows) warn on first open — that is expected, not a claim that Louis is malware. Follow Installing on macOS or Installing on Windows for the exact clicks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is “Use default client”?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In the setup wizard (or Settings → Advanced), Use default client prefills Louis’s bundled public Yoto PKCE client ID. The desktop redirect URI is already registered, so you can skip creating an app on yoto.dev. Prefer your own client? Create a public PKCE app, register http://127.0.0.1:4010/api/yoto/auth/callback exactly, paste the client ID, and leave the secret empty."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do I need a YouTube API key?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Louis uses Google’s YouTube Data API v3 to search YouTube. You do not need YouTube login for that — only an API key. Create a Google Cloud project, enable YouTube Data API v3, create an API key, and paste it into setup."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does Connect / Yoto sign-in work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "After setup, Connect opens your system browser (password managers work). You sign in with Yoto there; Louis polls until you’re signed in. Close the browser tab and return to the app. A bad client ID won’t lock you out of Louis — fix it under Settings."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where does Louis store my keys and files?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "On your machine only — not inside the installer as secrets. macOS: ~/Library/Application Support/Louis/. Windows: %APPDATA%\\Louis\\. You’ll find config.json (API keys / optional cookies path), yoto-session.json (OAuth tokens after Connect), and an audio/ work folder."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Downloads fail with a bot check or age gate — what now?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Open Settings → Advanced and set an optional Netscape cookies.txt path for yt-dlp. Prefer a throwaway Google account; never share or commit that file. Keep Louis updated — releases refresh bundled download tools."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I change settings after first launch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Settings → Advanced lets you update the Yoto client ID (default vs your own), YouTube API key, and optional cookies path anytime."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Louis open source? Who built it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes — code and releases live on GitHub. Louis is an open-source software project from Stuart Romanek."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="hero">
+      <div class="hero__stage">
+        <div class="hero__visual">
+          <div
+            class="hero__player"
+            data-hero-lottie
+            role="img"
+            aria-label="Louis — a swan playing a trumpet on a Yoto-style player"
+            hidden
+          ></div>
+          <img
+            class="hero__player hero__player--mark"
+            src="/images/louis-yoto.svg"
+            alt="Louis — a swan playing a trumpet on a Yoto-style player"
+            width="357"
+            height="343"
+            decoding="async"
+          />
+        </div>
+        <div class="hero__content">
+          <h1 class="logo-wordmark" aria-label="Louis!">
+            <span class="visually-hidden"
+              >Louis — turns YouTube into audio for your Yoto Make Your Own cards</span
+            >
+            <span class="logo-wordmark__letter logo-wordmark__letter--l" style="--i: 0; --tilt: -4deg" aria-hidden="true">L</span>
+            <span class="logo-wordmark__letter logo-wordmark__letter--o" style="--i: 1; --tilt: 3deg" aria-hidden="true">o</span>
+            <span class="logo-wordmark__letter logo-wordmark__letter--u" style="--i: 2; --tilt: -2deg" aria-hidden="true">u</span>
+            <span class="logo-wordmark__letter logo-wordmark__letter--i" style="--i: 3; --tilt: 4deg" aria-hidden="true">i</span>
+            <span class="logo-wordmark__letter logo-wordmark__letter--s" style="--i: 4; --tilt: -3deg" aria-hidden="true">s</span>
+            <span class="logo-wordmark__letter logo-wordmark__letter--bang" style="--i: 5; --tilt: 6deg" aria-hidden="true">!</span>
+          </h1>
+          <p class="hero__chips" aria-label="Yoto, meet YouTube">
+            <span class="chip chip--blue" style="--i: 0; --tilt: -3deg">Yoto,</span>
+            <span class="chip chip--pink" style="--i: 1; --tilt: 2.5deg">meet</span>
+            <span class="chip chip--orange" style="--i: 2; --tilt: -1.5deg">YouTube</span>
+          </p>
+          <p class="hero__tagline hero__reveal" style="--reveal-at: var(--hero-tagline-at)">
+            Louis is a desktop app that turns YouTube into audio for your Yoto Make Your Own
+            cards. Search for tracks, arrange a playlist, then save — Louis downloads, transcodes,
+            and loads the audio onto the blank MYO cards you already own.
+          </p>
+          <div class="hero__cta">
+            <div class="hero__cta-primary">
+              <a
+                class="maru-button hero__reveal"
+                style="--reveal-at: var(--hero-cta-at)"
+                data-download-cta
+                href="https://github.com/stuartromanek/louis/releases/latest"
+              >
+                <span class="maru-button__label">Download</span>
+              </a>
+              <div class="hero__cta-links hero__reveal" style="--reveal-at: var(--hero-cta2-at)">
+                <a class="maru-secondary maru-secondary--down" href="#install">
+                  All downloads
+                </a>
+                <a class="maru-secondary maru-secondary--down-double" href="#install-mac">
+                  How to install
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="install" class="section section--cream">
+        <div class="section__inner">
+          <h2 class="maru-heading maru-heading--lg maru-heading--coral section__title">
+            <span class="maru-heading__label" data-outline="Install">Install</span>
+          </h2>
+          <p class="section__lede">
+            Grab the desktop app for macOS or Windows — same Louis experience as self-hosting,
+            without Docker. Installers ship on each GitHub Release.
+          </p>
+          <ul id="platforms" class="platform-list">
+            <li>
+              <a
+                class="platform"
+                data-platform="mac-arm64"
+                href="https://github.com/stuartromanek/louis/releases/latest"
+              >
+                <span class="platform__meta">
+                  <svg class="platform__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                    />
+                  </svg>
+                </span>
+                <span class="platform__os">macOS Apple Silicon</span>
+                <span class="platform__file mono" data-platform-file>Louis-*-arm64.dmg</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="platform"
+                data-platform="mac-x64"
+                href="https://github.com/stuartromanek/louis/releases/latest"
+              >
+                <span class="platform__meta">
+                  <svg class="platform__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                    />
+                  </svg>
+                </span>
+                <span class="platform__os">macOS Intel</span>
+                <span class="platform__file mono" data-platform-file>Louis-*-x64.dmg</span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="platform"
+                data-platform="windows"
+                href="https://github.com/stuartromanek/louis/releases/latest"
+              >
+                <span class="platform__meta">
+                  <svg class="platform__logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M3 5.42 11.02 4.3v7.2H3V5.42Zm9.02-1.4L21 2.8v8.7h-8.98V4.02ZM3 12.7h8.02v7.2L3 18.78V12.7Zm9.02 0H21V21.2l-8.98-1.25V12.7Z"
+                    />
+                  </svg>
+                </span>
+                <span class="platform__os">Windows</span>
+                <span class="platform__file mono" data-platform-file>Louis-Setup-*.exe</span>
+              </a>
+            </li>
+          </ul>
+          <nav class="guide-links" aria-label="Installation guides">
+            <a class="maru-secondary maru-secondary--down" href="#install-mac">
+              Installing on macOS
+            </a>
+            <a class="maru-secondary maru-secondary--down" href="#install-windows">
+              Installing on Windows
+            </a>
+          </nav>
+          <p class="note">
+            Builds are currently <strong>unsigned</strong>. macOS Gatekeeper or Windows SmartScreen
+            may warn the first time — expected until release signing is enabled. Use the guides
+            above so the scary dialogs don’t stop you.
+            <a href="https://github.com/stuartromanek/louis/releases/latest">Latest release →</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="install-mac" class="section section--sky">
+        <div class="section__inner section__inner--wide">
+          <h2 class="maru-heading maru-heading--lg maru-heading--coral section__title">
+            <span class="maru-heading__label" data-outline="Installing on macOS">Installing on macOS</span>
+          </h2>
+          <p class="section__lede">
+            Louis ships as a <span class="mono">.dmg</span>, but it is not yet Apple-notarized.
+            macOS will treat it as an app from an unidentified developer. That is expected — not a
+            virus warning about Louis itself. Work through these screens in order.
+          </p>
+
+          <ol class="guide">
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">1. Find the downloaded disk image</h3>
+                <p class="guide__body">
+                  From GitHub Releases, download the right file for your Mac:
+                  <span class="mono">Louis-…-arm64.dmg</span> for Apple Silicon, or
+                  <span class="mono">Louis-…-x64.dmg</span> for Intel. Open your Downloads folder
+                  (or wherever the file landed) and double-click the
+                  <span class="mono">.dmg</span>.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/mac/01-dmg-downloaded.webp"
+                  alt="Finder window showing the downloaded Louis arm64 disk image selected"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">2. Drag Louis into Applications</h3>
+                <p class="guide__body">
+                  A window opens with <strong>Louis.app</strong> on the left and
+                  <strong>Applications</strong> on the right. Drag Louis onto Applications and wait
+                  for the copy to finish. Then you can eject the disk image (click the eject icon
+                  next to it in Finder’s sidebar).
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/mac/02-dmg-drag-to-applications.webp"
+                  alt="Louis disk image window with Louis.app and an arrow pointing to the Applications folder"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">3. Open Applications → Utilities</h3>
+                <p class="guide__body">
+                  Because Louis is unsigned, a normal double-click may get blocked. We’ll clear
+                  macOS’s quarantine flag first. Open the <strong>Applications</strong> folder,
+                  then open the <strong>Utilities</strong> folder (green circle in the screenshot).
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/mac/03-applications-utilities.webp"
+                  alt="Applications folder in Finder with the Utilities folder circled in green"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">4. Open Terminal</h3>
+                <p class="guide__body">
+                  Inside Utilities, open <strong>Terminal</strong> (green circle). A black or white
+                  text window appears — that is normal.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/mac/04-utilities-terminal.webp"
+                  alt="Utilities folder with Terminal.app selected and circled in green"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">5. Clear the quarantine flag</h3>
+                <p class="guide__body">
+                  Click in the Terminal window, paste or carefully type this exact command, then
+                  press <strong>Return</strong>:
+                </p>
+                <div class="codeblock">
+                  <pre class="codeblock__pre"><code>xattr -cr /Applications/Louis.app</code></pre>
+                  <button type="button" class="codeblock__copy" aria-label="Copy command">
+                    Copy
+                  </button>
+                </div>
+                <p class="guide__body">
+                  Nothing dramatic should print — a new prompt line means it worked. This only
+                  removes the “downloaded from the internet” lock; it does not change Louis itself.
+                  If you installed Louis somewhere other than Applications, replace the path in that
+                  command with the full path to your <span class="mono">Louis.app</span>.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/mac/05-terminal-xattr.webp"
+                  alt="Terminal window with the xattr -cr /Applications/Louis.app command circled in green"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">6. Right-click Louis and choose Open</h3>
+                <p class="guide__body">
+                  Go back to <strong>Applications</strong>, find <strong>Louis</strong>, then
+                  <strong>Control-click</strong> (or right-click) it — do not double-click yet.
+                  Choose <strong>Open</strong> from the menu. If macOS still asks for confirmation,
+                  click <strong>Open</strong> again. Louis launches and the
+                  <a href="#setup">first-time setup</a> wizard starts.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/mac/06-applications-open.webp"
+                  alt="Applications folder with Louis.app selected and the context menu Open option highlighted"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+          </ol>
+
+          <p class="note note--after-guide">
+            Still stuck? Confirm you downloaded from the official
+            <a href="https://github.com/stuartromanek/louis/releases/latest">GitHub Releases</a>
+            page, picked <span class="mono">arm64</span> vs <span class="mono">x64</span> correctly,
+            and that Louis lives at <span class="mono">/Applications/Louis.app</span> when you run
+            the Terminal command. After the first successful Open, you can launch Louis normally
+            from Launchpad or Applications.
+          </p>
+        </div>
+      </section>
+
+      <section id="install-windows" class="section section--pink">
+        <div class="section__inner section__inner--wide">
+          <h2 class="maru-heading maru-heading--lg maru-heading--blue section__title">
+            <span class="maru-heading__label" data-outline="Installing on Windows">Installing on Windows</span>
+          </h2>
+          <p class="section__lede">
+            Louis’s Windows installer is a normal <span class="mono">.exe</span>, but it is not yet
+            code-signed. Windows and Microsoft Edge will try hard to stop you. That is expected —
+            not a virus warning about Louis itself. Work through these screens in order. When in
+            doubt: never click <strong>Delete</strong> or <strong>Don’t run</strong>.
+          </p>
+
+          <ol class="guide">
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">1. Edge says the file isn’t commonly downloaded</h3>
+                <p class="guide__body">
+                  After you click <span class="mono">Louis-Setup-….exe</span> on GitHub, Edge opens
+                  Downloads and shows an orange warning. Do <strong>not</strong> click the trash can.
+                  Click the <strong>⋯</strong> (three dots) next to the file, then click
+                  <strong>Keep</strong>.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/01-edge-download-warning.webp"
+                  alt="Edge Downloads panel warning that Louis-Setup isn’t commonly downloaded, with the three-dot menu open and Keep highlighted"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">2. Edge asks you to trust the file</h3>
+                <p class="guide__body">
+                  A second dialog appears: “Make sure you trust…” with Publisher
+                  <strong>Unknown</strong>. The big blue button is <strong>Delete</strong> — ignore
+                  it. Click the <strong>⋯</strong> next to Delete, then click
+                  <strong>Keep anyway</strong>.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/02-edge-keep-anyway.webp"
+                  alt="Edge trust dialog with Delete as the main button and Keep anyway revealed under the three-dot menu"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">3. Open the installer</h3>
+                <p class="guide__body">
+                  In Edge Downloads, open <span class="mono">Louis-Setup-….exe</span> (click the
+                  filename). Windows shows a blue screen: <strong>Windows protected your PC</strong>.
+                  Do <strong>not</strong> click <strong>Don’t run</strong>. Click the small
+                  <strong>More info</strong> link under the warning text.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/03-smartscreen-blocked.webp"
+                  alt="Blue SmartScreen dialog Windows protected your PC with only Don’t run visible and a More info link"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">4. Click Run anyway</h3>
+                <p class="guide__body">
+                  After More info, Windows shows the app name and
+                  <strong>Publisher: Unknown publisher</strong>. That unknown publisher line is why
+                  SmartScreen blocked you — unsigned builds look like this. Click
+                  <strong>Run anyway</strong> (still leave Don’t run alone).
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/04-smartscreen-run-anyway.webp"
+                  alt="SmartScreen after More info, showing Unknown publisher with Run anyway and Don’t run buttons"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">5. Choose who can use Louis</h3>
+                <p class="guide__body">
+                  The Louis Setup window opens. Prefer
+                  <strong>Only for me</strong> (your Windows username). That installs without needing
+                  an admin password. Click <strong>Next</strong>.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/05-installer-who-for.webp"
+                  alt="Louis Setup Choose Installation Options with Only for me selected"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">6. Leave the folder alone and Install</h3>
+                <p class="guide__body">
+                  Setup suggests a folder under your user account (something like
+                  <span class="mono">AppData\Local\Programs\Louis</span>). You do not need to change
+                  it. Click <strong>Install</strong>.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/06-installer-location.webp"
+                  alt="Louis Setup Choose Install Location with the default AppData Programs Louis path"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">7. Wait for Installing</h3>
+                <p class="guide__body">
+                  A progress bar appears. Leave this window open until it finishes. Do not close Edge
+                  or the Setup window mid-way.
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/07-installer-progress.webp"
+                  alt="Louis Setup Installing screen with a green progress bar"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+
+            <li class="guide__step">
+              <div class="guide__copy">
+                <h3 class="guide__title">8. Finish and run Louis</h3>
+                <p class="guide__body">
+                  When you see <strong>Completing Louis Setup</strong>, leave
+                  <strong>Run Louis</strong> checked and click <strong>Finish</strong>. Louis opens
+                  and the <a href="#setup">first-time setup</a> wizard starts (Yoto client ID and
+                  YouTube API key).
+                </p>
+              </div>
+              <figure class="guide__figure">
+                <img
+                  src="/images/install/win/08-installer-finish.webp"
+                  alt="Louis Setup Completing screen with Run Louis checked and Finish highlighted"
+                  width="1280"
+                  height="800"
+                  loading="lazy"
+                />
+              </figure>
+            </li>
+          </ol>
+
+          <p class="note note--after-guide">
+            Still stuck? Confirm you downloaded from the official
+            <a href="https://github.com/stuartromanek/louis/releases/latest">GitHub Releases</a>
+            page (filename starts with <span class="mono">Louis-Setup-</span>). Chrome and Firefox
+            use different wording, but the idea is the same: keep the file, then allow Windows to run
+            an unrecognized app.
+          </p>
+        </div>
+      </section>
+
+      <section id="setup" class="section section--candy">
+        <div class="section__inner">
+          <h2 class="maru-heading maru-heading--lg maru-heading--blue section__title">
+            <span class="maru-heading__label" data-outline="First-time setup">First-time setup</span>
+          </h2>
+          <p class="section__lede">
+            On first launch, Louis walks through a short setup wizard. You need a YouTube Data API
+            key. For Yoto, prefer Louis’s built-in default client — no yoto.dev app required.
+          </p>
+          <ol class="steps">
+            <li class="step">
+              <div>
+                <h3 class="step__title">Yoto client</h3>
+                <p class="step__body">
+                  Click <strong>Use default client</strong> in the wizard (or later under
+                  <strong>Settings → Advanced</strong>). That fills Louis’s bundled public PKCE
+                  client ID — the desktop redirect URI is already registered, so you can skip
+                  creating an app on
+                  <a href="https://yoto.dev/get-started/start-here/">yoto.dev</a>.
+                </p>
+                <p class="step__body">
+                  Prefer your own client? Create a <strong>public</strong> (PKCE) app at yoto.dev,
+                  register this redirect URI exactly, paste the client ID, and leave the secret
+                  empty:
+                </p>
+                <div class="redirect">
+                  <code class="redirect__value">http://127.0.0.1:4010/api/yoto/auth/callback</code>
+                  <button type="button" class="redirect__copy" aria-label="Copy redirect URI">
+                    Copy
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <div>
+                <h3 class="step__title">YouTube Data API</h3>
+                <p class="step__body">
+                  Louis needs a Google API key to search YouTube. YouTube login is
+                  <strong>not</strong> required — only an API key.
+                </p>
+                <p class="step__body">
+                  1. Open
+                  <a href="https://console.cloud.google.com/"
+                    >Google Cloud Console</a
+                  >
+                  and sign in. Create a project (or pick an existing one).
+                </p>
+                <p class="step__body">
+                  2. Enable
+                  <a href="https://console.cloud.google.com/apis/library/youtube.googleapis.com"
+                    >YouTube Data API v3</a
+                  >
+                  for that project (click <strong>Enable</strong>).
+                </p>
+                <p class="step__body">
+                  3. Go to
+                  <a href="https://console.cloud.google.com/apis/credentials">Credentials</a>,
+                  click <strong>Create credentials → API key</strong>, copy the key, and paste it
+                  into Louis’s setup form. Restricting the key to YouTube Data API v3 is optional
+                  but smart.
+                </p>
+                <p class="step__body">
+                  Stuck? Google’s
+                  <a href="https://developers.google.com/youtube/v3/getting-started"
+                    >YouTube Data API getting started</a
+                  >
+                  walkthrough covers the same steps.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <div>
+                <h3 class="step__title">Let’s go</h3>
+                <p class="step__body">
+                  With the default client, the wizard skips the OAuth redirect step. Confirm you’re
+                  ready and press <strong>Let’s go</strong>. Louis saves keys locally and restarts.
+                  Use <strong>Connect</strong> to sign in with Yoto in your system browser — then
+                  search, arrange, and save to your MYO cards.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="docker" class="section section--sky">
+        <div class="section__inner">
+          <h2 class="maru-heading maru-heading--lg maru-heading--blue section__title">
+            <span class="maru-heading__label" data-outline="Docker">Docker</span>
+          </h2>
+          <p class="section__lede">
+            Prefer containers? The same release ships on GHCR — Node, yt-dlp, and ffmpeg included.
+          </p>
+          <pre class="pre"><code>docker pull ghcr.io/stuartromanek/louis:latest
+# pin: ghcr.io/stuartromanek/louis:vX.Y.Z</code></pre>
+          <p class="note">
+            Full compose and env setup lives in the
+            <a href="https://github.com/stuartromanek/louis#quick-start-docker">app README</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="faq" class="section section--cream">
+        <div class="section__inner">
+          <h2 class="maru-heading maru-heading--lg maru-heading--coral section__title">
+            <span class="maru-heading__label" data-outline="FAQ">FAQ</span>
+          </h2>
+          <p class="section__lede">
+            Straight answers about what Louis is, how it works, and what you need to run it.
+          </p>
+
+          <div class="faq">
+            <details class="faq__item">
+              <summary class="faq__question">What is Louis?</summary>
+              <div class="faq__answer">
+                <p>
+                  Louis is a desktop (and self-hosted) app that turns YouTube into audio for your
+                  Yoto <strong>Make Your Own (MYO)</strong> cards. You search YouTube, arrange a
+                  playlist, then save — Louis downloads, transcodes, and loads the audio onto blank
+                  MYO cards you already own.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">What do I need before I start?</summary>
+              <div class="faq__answer">
+                <p>
+                  A Mac or Windows PC (or Docker), a
+                  <a href="https://yotoplay.com/">Yoto</a> account with MYO cards, a free
+                  <strong>YouTube Data API v3</strong> key from Google Cloud, and — for Yoto sign-in —
+                  either Louis’s <strong>Use default client</strong> button or your own public PKCE
+                  client from
+                  <a href="https://yoto.dev/get-started/start-here/">yoto.dev</a>.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Is Louis free? Who is it for?</summary>
+              <div class="faq__answer">
+                <p>
+                  Louis is an open-source project you can download and run yourself.
+                  <strong>Personal use only.</strong> You are responsible for complying with
+                  <a href="https://www.youtube.com/t/terms">YouTube’s Terms of Service</a>
+                  and applicable law when downloading audio.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Desktop app or Docker — what’s the difference?</summary>
+              <div class="faq__answer">
+                <p>
+                  Same Louis experience either way. The <strong>desktop app</strong> (macOS / Windows)
+                  bundles a local server plus yt-dlp and ffmpeg — no Docker required. Prefer
+                  containers? Pull the same release version from GHCR
+                  (<span class="mono">ghcr.io/stuartromanek/louis</span>). Desktop listens on
+                  <span class="mono">http://127.0.0.1:4010</span>; Docker/dev typically uses port
+                  <span class="mono">4000</span>.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Which installer should I download?</summary>
+              <div class="faq__answer">
+                <p>
+                  <strong>macOS Apple Silicon</strong> → <span class="mono">Louis-…-arm64.dmg</span>.
+                  <strong>macOS Intel</strong> → <span class="mono">Louis-…-x64.dmg</span>.
+                  <strong>Windows</strong> → <span class="mono">Louis-Setup-….exe</span>.
+                  Installers live on each
+                  <a href="https://github.com/stuartromanek/louis/releases/latest">GitHub Release</a>
+                  (same <span class="mono">vX.Y.Z</span> as the Docker image). This site highlights
+                  “For you” when it can detect your machine.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                Why does macOS or Windows warn me the app is unsafe?
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Builds are currently <strong>unsigned</strong>. Gatekeeper (Mac) and SmartScreen
+                  (Windows) warn on first open — that is expected, not a claim that Louis is malware.
+                  Follow
+                  <a href="#install-mac">Installing on macOS</a>
+                  or
+                  <a href="#install-windows">Installing on Windows</a>
+                  for the exact clicks (including the Terminal
+                  <span class="mono">xattr</span> step on Mac and Edge “Keep anyway” / “Run anyway”
+                  on Windows).
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">What is “Use default client”?</summary>
+              <div class="faq__answer">
+                <p>
+                  In the setup wizard (or <strong>Settings → Advanced</strong>),
+                  <strong>Use default client</strong> prefills Louis’s bundled public Yoto PKCE
+                  client ID. The desktop redirect URI is already registered, so you can skip creating
+                  an app on yoto.dev. Prefer your own client? Create a public PKCE app, register
+                  <span class="mono">http://127.0.0.1:4010/api/yoto/auth/callback</span>
+                  exactly, paste the client ID, and leave the secret empty.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Why do I need a YouTube API key?</summary>
+              <div class="faq__answer">
+                <p>
+                  Louis uses Google’s <strong>YouTube Data API v3</strong> to search YouTube. You do
+                  <strong>not</strong> need YouTube login for that — only an API key. Create a Google
+                  Cloud project, enable YouTube Data API v3, create an API key, and paste it into
+                  setup. See the
+                  <a href="#setup">first-time setup</a>
+                  steps and Google’s
+                  <a href="https://developers.google.com/youtube/v3/getting-started"
+                    >getting started guide</a
+                  >.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">How does Connect / Yoto sign-in work?</summary>
+              <div class="faq__answer">
+                <p>
+                  After setup, <strong>Connect</strong> opens your <strong>system browser</strong>
+                  (password managers work). You sign in with Yoto there; Louis polls until you’re
+                  signed in. Close the browser tab and return to the app. A bad client ID won’t lock
+                  you out of Louis — fix it under Settings.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Where does Louis store my keys and files?</summary>
+              <div class="faq__answer">
+                <p>
+                  On your machine only — not inside the installer as secrets. macOS:
+                  <span class="mono">~/Library/Application Support/Louis/</span>.
+                  Windows: <span class="mono">%APPDATA%\Louis\</span>.
+                  You’ll find <span class="mono">config.json</span> (API keys / optional cookies
+                  path), <span class="mono">yoto-session.json</span> (OAuth tokens after Connect),
+                  and an <span class="mono">audio/</span> work folder.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">
+                Downloads fail with a bot check or age gate — what now?
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Open <strong>Settings → Advanced</strong> and set an optional Netscape
+                  <span class="mono">cookies.txt</span> path for yt-dlp. Prefer a throwaway Google
+                  account; never share or commit that file. Keep Louis updated — releases refresh
+                  bundled download tools.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Can I change settings after first launch?</summary>
+              <div class="faq__answer">
+                <p>
+                  Yes. <strong>Settings → Advanced</strong> lets you update the Yoto client ID
+                  (default vs your own), YouTube API key, and optional cookies path anytime.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Is Louis open source? Who built it?</summary>
+              <div class="faq__answer">
+                <p>
+                  Yes — code and releases live on
+                  <a href="https://github.com/stuartromanek/louis">GitHub</a>.
+                  Louis is an open-source software project from
+                  <a href="https://romanek.us" rel="noopener noreferrer">Stuart Romanek</a>.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__tag">
+          <span class="footer__brand" aria-hidden="true">
+            <span class="footer__brand-letter footer__brand-letter--l">L</span>
+            <span class="footer__brand-letter footer__brand-letter--o">o</span>
+            <span class="footer__brand-letter footer__brand-letter--u">u</span>
+            <span class="footer__brand-letter footer__brand-letter--i">i</span>
+            <span class="footer__brand-letter footer__brand-letter--s">s</span>
+            <span class="footer__brand-letter footer__brand-letter--bang">!</span>
+          </span>
+          Yoto, meet YouTube.
+        </p>
+        <nav class="footer__links" aria-label="Louis links">
+          <a href="https://github.com/stuartromanek/louis">GitHub</a>
+          <a href="https://github.com/stuartromanek/louis/releases/latest">Releases</a>
+          <a href="https://github.com/stuartromanek/louis/blob/main/docs/DESKTOP.md">Desktop docs</a>
+        </nav>
+        <p class="footer__legal">
+          <strong>Personal use only.</strong> Comply with
+          <a href="https://www.youtube.com/t/terms">YouTube’s Terms of Service</a>
+          and applicable law when downloading audio.
+        </p>
+        <p class="footer__meta">
+          Typeface: LT Saeada (SIL OFL) —
+          <a href="/fonts/saeada/OFL.txt">OFL.txt</a>
+        </p>
+      </div>
+    </footer>
+    <div class="credit-band">
+      <div class="credit-band__inner">
+        <p class="credit-band__about">
+          <a href="https://romanek.us" rel="noopener noreferrer">Stuart Romanek</a>
+          designs startup brands, apps, and websites.
+        </p>
+      </div>
+    </div>
+
+    <dialog id="lightbox" class="lightbox" aria-label="Larger screenshot">
+      <button type="button" class="lightbox__close" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+      <img class="lightbox__img" alt="" />
+    </dialog>
+
+    <div id="toast-host" class="toast-host" aria-live="polite" aria-relevant="additions text"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.13.0/lottie.min.js" defer></script>
+    <script src="/js/hero-lottie.js" defer></script>
+    <script src="/js/download.js" defer></script>
+    <script src="/js/lightbox.js" defer></script>
+    <script src="/js/codeblock.js" defer></script>
+  </body>
+</html>

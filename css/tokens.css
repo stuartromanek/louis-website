@@ -1,0 +1,108 @@
+/* GT Maru tokens + Louis brand candy palette */
+
+@font-face {
+  font-family: "Saeada";
+  src: url("/fonts/saeada/LTSaeada-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saeada";
+  src: url("/fonts/saeada/LTSaeada-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Saeada";
+  src: url("/fonts/saeada/LTSaeada-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-maru: "Saeada", ui-sans-serif, system-ui, sans-serif;
+  /* Readable prose — keep Saeada for display / chrome only */
+  --font-body:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-maru-caption: clamp(0.625rem, 0.5rem + 0.4vw, 0.75rem);
+  --text-maru-caption--line-height: 1.15;
+  --text-maru-body: clamp(1.1rem, 0.85rem + 0.9vw, 1.35rem);
+  --text-maru-body--line-height: 1.45;
+  --text-maru-meta: clamp(0.8rem, 0.65rem + 0.5vw, 1rem);
+  --text-maru-meta--line-height: 1.4;
+  --text-maru-button: clamp(1.25rem, 0.95rem + 0.9vw, 1.5rem);
+  --text-maru-button--line-height: 1;
+  --text-maru-button-secondary: clamp(0.8rem, 0.65rem + 0.45vw, 1rem);
+  --text-maru-button-secondary--line-height: 1;
+  --text-maru-display: clamp(3rem, 1.2rem + 6vw, 5.5rem);
+  --text-maru-display--line-height: 0.9;
+
+  /* Core maru */
+  --color-maru-white: #ffffff;
+  --color-maru-black: #000000;
+  --color-maru-gray: #666660;
+  --color-maru-gray-light: #cbccbe;
+  --color-maru-yellow: #ffc800;
+  --color-maru-yellow-light: #ffff55;
+  --color-maru-blue: #0068ff;
+  --color-maru-blue-light: #83bbff;
+  --color-maru-blue-lighter: #b3d9ff;
+  --color-maru-red-light: #ff8080;
+  --color-maru-red-lighter: #ffcccc;
+  --color-maru-orange: #ff9400;
+  --color-maru-green-light: #00bf3a;
+  --color-maru-turquoise-light: #05cf9c;
+  --color-maru-magenta-light: #fa97ff;
+
+  /* Louis brand candy (from lockup / player art) */
+  --color-louis-pink: #ffc5c8;
+  --color-louis-cream: #fcf5f3;
+  --color-louis-coral: #f1765d;
+  --color-louis-gold: #faa333;
+  --color-louis-chip-yellow: #ffe14a;
+  --color-louis-chip-pink: #f7a8d8;
+  --color-louis-chip-orange: #ff9a2e;
+  --color-louis-letter-l: #ffe14a;
+  --color-louis-letter-o: #ff9a2e;
+  --color-louis-letter-u: #7ee0c8;
+  --color-louis-letter-i: #b8f04a;
+  --color-louis-letter-s: #7cff4a;
+  --color-louis-letter-bang: #7ec8ff;
+  --color-louis-sky: #b8e4ff;
+
+  --radius-maru: 16px;
+  --radius-maru-chip: 999px;
+  --shadow-maru: 5px 5px 0 var(--color-maru-black);
+  --shadow-maru-sm: 3px 3px 0 var(--color-maru-black);
+
+  /* Motion (emilkowalski/animate) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --spacing-maru-xs: calc(100vmax / 56);
+  --spacing-maru-s: calc(100vmax / 42);
+  --spacing-maru-m: calc(100vmax / 28);
+  --spacing-maru-l: calc(100vmax / 14);
+
+  --gutter: 15px;
+}
+
+@media (width >= 600px) {
+  :root {
+    --gutter: 20px;
+  }
+}
+
+@media (width >= 1100px) {
+  :root {
+    --gutter: 60px;
+  }
+}

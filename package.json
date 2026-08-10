@@ -1,0 +1,11 @@
+{
+  "name": "louis-website",
+  "private": true,
+  "scripts": {
+    "dev": "vite --open",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

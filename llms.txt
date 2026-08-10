@@ -1,0 +1,38 @@
+# Louis
+
+> Louis turns YouTube into audio playlists you can save to your Yoto Make Your Own (MYO) cards.
+
+Louis is an open-source desktop and self-hosted app for personal use. Search YouTube, arrange a playlist, then save — Louis downloads, transcodes, and loads audio onto blank Yoto MYO cards you already own.
+
+## Product
+
+- Desktop app for macOS (Apple Silicon + Intel) and Windows
+- Same experience via Docker / GHCR (`ghcr.io/stuartromanek/louis`)
+- Desktop local server: `http://127.0.0.1:4010`
+- Docker/dev typically: port `4000`
+- Bundled yt-dlp and ffmpeg in the desktop app
+- First-run setup: prefer **Use default client** for Yoto (public PKCE); requires a YouTube Data API v3 key
+- Builds are currently unsigned (Gatekeeper / SmartScreen expected)
+
+## Installers (GitHub Releases)
+
+- macOS Apple Silicon: `Louis-<version>-arm64.dmg`
+- macOS Intel: `Louis-<version>-x64.dmg`
+- Windows: `Louis-Setup-<version>.exe`
+
+Site download buttons resolve the latest assets dynamically via the GitHub Releases API.
+
+## Links
+
+- Website: https://louis.romanek.us/
+- GitHub: https://github.com/stuartromanek/louis
+- Latest release: https://github.com/stuartromanek/louis/releases/latest
+- Desktop docs: https://github.com/stuartromanek/louis/blob/main/docs/DESKTOP.md
+- Docker README: https://github.com/stuartromanek/louis#quick-start-docker
+- Install guides: https://louis.romanek.us/#install-mac · https://louis.romanek.us/#install-windows
+- FAQ: https://louis.romanek.us/#faq
+- Author: Stuart Romanek — https://romanek.us
+
+## Personal use
+
+Personal use only. You are responsible for complying with YouTube’s Terms of Service and applicable law when downloading audio.
