@@ -22,17 +22,22 @@
     return /Win/.test(ua) || /win/i.test(platform);
   }
 
-  function gpuLooksAppleSilicon() {
+  function gpuMacArch() {
     try {
       const canvas = document.createElement("canvas");
       const gl = canvas.getContext("webgl");
-      if (!gl) return false;
+      if (!gl) return null;
       const ext = gl.getExtension("WEBGL_debug_renderer_info");
-      if (!ext) return false;
-      const renderer = gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) || "";
-      return /Apple/i.test(renderer) && !/Intel/i.test(renderer);
+      if (!ext) return null;
+      const renderer = String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) || "");
+      // Apple Silicon GPUs report Apple/M-series; Intel Macs report Intel/AMD.
+      if (/Apple|M\d/i.test(renderer) && !/Intel|AMD|NVIDIA/i.test(renderer)) {
+        return "mac-arm64";
+      }
+      if (/Intel|AMD|NVIDIA/i.test(renderer)) return "mac-x64";
+      return null;
     } catch {
-      return false;
+      return null;
     }
   }
 
@@ -48,6 +53,7 @@
       return null;
     }
 
+    // Chrome/Edge can report real arch; Safari UA still says "Intel Mac OS X" on Apple Silicon.
     if (navigator.userAgentData?.getHighEntropyValues) {
       try {
         const { architecture } = await navigator.userAgentData.getHighEntropyValues([
@@ -60,10 +66,10 @@
       }
     }
 
-    if (/Intel/.test(ua)) return "mac-x64";
-    if (gpuLooksAppleSilicon()) return "mac-arm64";
+    const fromGpu = gpuMacArch();
+    if (fromGpu) return fromGpu;
 
-    // Default modern Macs to Apple Silicon
+    // Default modern Macs to Apple Silicon — do not trust "Intel" in the UA string.
     return "mac-arm64";
   }
 
