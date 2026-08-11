@@ -1044,6 +1044,11 @@ code,
   line-height: 1.25;
 }
 
+.guide__copy {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .guide__body {
   margin: 0;
   font-family: var(--font-body);
@@ -1059,7 +1064,7 @@ code,
 }
 
 #install-mac .codeblock {
-  max-width: 42em;
+  max-width: min(42em, 100%);
 }
 
 .guide__body a {
@@ -1078,7 +1083,9 @@ code,
 .codeblock {
   display: flex;
   align-items: stretch;
-  max-width: 36em;
+  width: 100%;
+  max-width: min(36em, 100%);
+  box-sizing: border-box;
   border: 1px solid color-mix(in srgb, var(--color-maru-black) 22%, transparent);
   border-radius: 6px;
   background: #1c1c1c;
@@ -1763,6 +1770,16 @@ code,
 
   .codeblock {
     flex-wrap: wrap;
+  }
+
+  .codeblock__pre {
+    max-width: 100%;
+  }
+
+  .codeblock__pre code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .codeblock__copy {
