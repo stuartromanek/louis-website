@@ -16,7 +16,7 @@
     closeBtn?.focus();
   }
 
-  document.querySelectorAll(".guide__figure").forEach((figure) => {
+  document.querySelectorAll(".guide__figure, .feature__figure, .setup__figure").forEach((figure) => {
     const thumb = figure.querySelector("img");
     if (!thumb) return;
 

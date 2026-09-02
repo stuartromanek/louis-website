@@ -1,15 +1,20 @@
 # Louis
 
-> Louis turns YouTube into audio playlists you can save to your Yoto Make Your Own (MYO) cards.
+> Louis turns YouTube into audio playlists for your Yoto. Link a playlist to a physical Make Your Own (MYO) card in the Yoto app.
 
-Louis is an open-source desktop and self-hosted app for personal use. Search YouTube, arrange a playlist, then save — Louis downloads, transcodes, and loads audio onto blank Yoto MYO cards you already own.
+Louis is an open-source desktop and self-hosted app for personal use. Search YouTube or paste a video, playlist, or channel URL, arrange a playlist, then Update — Louis downloads and transcodes. Physical MYO card linking stays in the Yoto app.
 
 ## Product
 
+- Search YouTube; paste a video, Shorts, playlist, or channel URL
+- Playlist artwork (generate / upload / crop) and per-track 16×16 art (Yoto library, yotoicons.com, or draw)
+- Trim a YouTube source; videos over 55 minutes auto-split into connected parts
+- Optional loudness normalize for newly downloaded tracks
 - Desktop app for macOS (Apple Silicon + Intel) and Windows
-- Same experience via Docker / GHCR (`ghcr.io/stuartromanek/louis`)
+- Same experience via Docker / GHCR (`ghcr.io/stuartromanek/louis`) or Home Assistant add-on
+- Phone UI when self-hosted on the LAN (Search / Library / Add to playlist)
 - Desktop local server: `http://127.0.0.1:4010`
-- Docker/dev typically: port `4000`
+- Docker / Home Assistant: port `4000` (not Home Assistant ingress)
 - Bundled yt-dlp and ffmpeg in the desktop app
 - First-run setup: prefer **Use default client** for Yoto (public PKCE); requires a YouTube Data API v3 key
 - Builds are currently unsigned (Gatekeeper / SmartScreen expected)
@@ -25,10 +30,14 @@ Site download buttons resolve the latest assets dynamically via the GitHub Relea
 ## Links
 
 - Website: https://louis.romanek.us/
+- How it works: https://louis.romanek.us/#how
+- Features: https://louis.romanek.us/#features
 - GitHub: https://github.com/stuartromanek/louis
+- Changelog: https://github.com/stuartromanek/louis/blob/main/CHANGELOG.md
 - Latest release: https://github.com/stuartromanek/louis/releases/latest
 - Desktop docs: https://github.com/stuartromanek/louis/blob/main/docs/DESKTOP.md
 - Docker README: https://github.com/stuartromanek/louis#quick-start-docker
+- Home Assistant add-on: https://github.com/stuartromanek/louis/blob/main/homeassistant/louis/DOCS.md
 - Install guides: https://louis.romanek.us/#install-mac · https://louis.romanek.us/#install-windows
 - FAQ: https://louis.romanek.us/#faq
 - Author: Stuart Romanek — https://romanek.us

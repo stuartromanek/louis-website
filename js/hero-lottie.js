@@ -10,12 +10,12 @@
   let anim = null;
 
   function showMark() {
-    stage.hidden = true;
+    stage.removeAttribute("data-ready");
     if (mark) mark.hidden = false;
   }
 
-  function showLottie() {
-    stage.hidden = false;
+  function revealLottie() {
+    stage.dataset.ready = "true";
     if (mark) mark.hidden = true;
   }
 
@@ -24,13 +24,31 @@
     anim.destroy();
     anim = null;
     stage.replaceChildren();
+    stage.removeAttribute("data-ready");
+  }
+
+  function primeFrame() {
+    if (!anim) return;
+    if (reduced.matches) {
+      anim.goToAndStop(anim.totalFrames - 1, true);
+      return;
+    }
+    anim.goToAndStop(0, true);
+  }
+
+  function playLottie() {
+    if (!anim || reduced.matches) return;
+    anim.play();
+  }
+
+  function waitForLayout(then) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(then);
+    });
   }
 
   function load() {
-    // Hide the mark immediately so it can't peek beside the desktop Lottie
-    // while the animation is still fetching.
-    showLottie();
-
+    showMark();
     if (anim) return;
 
     anim = lottie.loadAnimation({
@@ -42,12 +60,11 @@
     });
 
     anim.addEventListener("DOMLoaded", () => {
-      if (reduced.matches) {
-        // Show the finished pose immediately.
-        anim.goToAndStop(anim.totalFrames - 1, true);
-        return;
-      }
-      anim.play();
+      primeFrame();
+      waitForLayout(() => {
+        revealLottie();
+        playLottie();
+      });
     });
 
     // loop:false already holds the last frame; this makes the intent explicit.

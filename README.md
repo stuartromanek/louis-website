@@ -1,6 +1,6 @@
 # Louis website
 
-Marketing one-pager for [Louis](https://github.com/stuartromanek/louis) — what it is, install guides, and first-time setup.
+Marketing one-pager for [Louis](https://github.com/stuartromanek/louis) — how it works, features, install guides, and first-time setup.
 
 ```bash
 npm install

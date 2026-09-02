@@ -6,7 +6,7 @@
     <title>Louis — Yoto MYO from YouTube | Download for Mac &amp; Windows</title>
     <meta
       name="description"
-      content="Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download the desktop app for macOS and Windows, or self-host with Docker."
+      content="Louis turns YouTube into audio playlists for your Yoto. Download the desktop app for macOS and Windows, or self-host with Docker or Home Assistant."
     />
     <meta name="author" content="Stuart Romanek" />
     <meta name="theme-color" content="#FFC5C8" />
@@ -25,7 +25,7 @@
     />
     <meta
       property="og:description"
-      content="Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker."
+      content="Louis turns YouTube into audio playlists for your Yoto. Download for macOS and Windows, or self-host with Docker or Home Assistant."
     />
     <meta property="og:image" content="https://louis.romanek.us/images/louis-og.png" />
     <meta property="og:image:type" content="image/png" />
@@ -33,7 +33,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Louis turns YouTube into audio playlists you can save to your Yoto Make Your Own cards."
+      content="Louis turns YouTube into audio playlists for your Yoto. Link a physical Make Your Own card in the Yoto app."
     />
 
     <!-- Twitter: summary_large_image (wide). Square asset: /images/louis-twitter-square.png for summary cards. -->
@@ -44,12 +44,12 @@
     />
     <meta
       name="twitter:description"
-      content="Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker."
+      content="Louis turns YouTube into audio playlists for your Yoto. Download for macOS and Windows, or self-host with Docker or Home Assistant."
     />
     <meta name="twitter:image" content="https://louis.romanek.us/images/louis-twitter-wide.png" />
     <meta
       name="twitter:image:alt"
-      content="Louis turns YouTube into audio playlists you can save to your Yoto Make Your Own cards."
+      content="Louis turns YouTube into audio playlists for your Yoto. Link a physical Make Your Own card in the Yoto app."
     />
 
     <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
@@ -67,7 +67,7 @@
             "@id": "https://louis.romanek.us/#website",
             "url": "https://louis.romanek.us/",
             "name": "Louis",
-            "description": "Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker.",
+            "description": "Louis turns YouTube into audio playlists for your Yoto. Download for macOS and Windows, or self-host with Docker or Home Assistant.",
             "publisher": { "@id": "https://romanek.us/#person" },
             "inLanguage": "en-US"
           },
@@ -78,7 +78,7 @@
             "name": "Louis — Yoto MYO from YouTube",
             "isPartOf": { "@id": "https://louis.romanek.us/#website" },
             "about": { "@id": "https://louis.romanek.us/#app" },
-            "description": "Louis turns YouTube into audio playlists for your Yoto Make Your Own (MYO) cards. Download for macOS and Windows, or self-host with Docker.",
+            "description": "Louis turns YouTube into audio playlists for your Yoto. Download for macOS and Windows, or self-host with Docker or Home Assistant.",
             "primaryImageOfPage": {
               "@type": "ImageObject",
               "url": "https://louis.romanek.us/images/louis-og.png",
@@ -92,8 +92,8 @@
             "@id": "https://louis.romanek.us/#app",
             "name": "Louis",
             "applicationCategory": "MultimediaApplication",
-            "operatingSystem": "macOS, Windows",
-            "description": "A desktop and self-hosted app that turns YouTube into audio for Yoto Make Your Own (MYO) cards. Searches YouTube, builds playlists, downloads and transcodes audio, and saves to MYO cards.",
+            "operatingSystem": "macOS, Windows, Docker, Home Assistant",
+            "description": "A desktop and self-hosted app that turns YouTube into audio playlists for Yoto. Search or paste a link, arrange tracks, download and transcode, then save to Yoto. Link a physical Make Your Own card in the Yoto app.",
             "url": "https://louis.romanek.us/",
             "downloadUrl": "https://github.com/stuartromanek/louis/releases/latest",
             "installUrl": "https://github.com/stuartromanek/louis/releases/latest",
@@ -237,7 +237,7 @@
                 "name": "What is Louis?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Louis is a desktop (and self-hosted) app that turns YouTube into audio for your Yoto Make Your Own (MYO) cards. You search YouTube, arrange a playlist, then save — Louis downloads, transcodes, and loads the audio onto blank MYO cards you already own."
+                  "text": "Louis is a desktop (and self-hosted) app that turns YouTube into audio playlists for your Yoto. You search or paste a link, arrange a playlist, then Update — Louis downloads and transcodes. Linking a physical Make Your Own (MYO) card stays in the Yoto app."
                 }
               },
               {
@@ -245,7 +245,47 @@
                 "name": "What do I need before I start?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A Mac or Windows PC (or Docker), a Yoto account with MYO cards, a free YouTube Data API v3 key from Google Cloud, and — for Yoto sign-in — either Louis’s Use default client button or your own public PKCE client from yoto.dev."
+                  "text": "A Mac or Windows PC (or Docker / Home Assistant), a Yoto account, a free YouTube Data API v3 key from Google Cloud, and — for Yoto sign-in — either Louis’s Use default client button or your own public PKCE client from yoto.dev."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Louis put audio on the physical card?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Louis edits playlists on your Yoto account. Linking a playlist to a physical Make Your Own card happens in the Yoto app, not in Louis."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use Louis on a phone?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The desktop app is macOS and Windows. If you self-host with Docker or Home Assistant on your LAN, the same app has a phone layout (Search / Library / Add to playlist). Add to Home installs it like an app. There is no native iOS or Android download."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What about hour-long videos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "YouTube sources over 55 minutes split into connected Part 1 / Part 2 tracks so they fit Yoto’s chapter limit. Trim first if you only want a region — Louis keeps that slice and re-splits only if it is still too long."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I set the icons on the player?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The Track Art Editor sets a 16×16 icon per track from the Yoto icon library, yotoicons.com, an upload, or a pixel Draw canvas. If icon save is denied, reconnect Yoto so Louis can request the user:icons:manage scope."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I run Louis in Home Assistant?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Add https://github.com/stuartromanek/louis as a Supervisor add-on repository, install Louis, and open http://homeassistant.local:4000. Do not use Home Assistant ingress — it breaks Yoto sign-in."
                 }
               },
               {
@@ -261,7 +301,7 @@
                 "name": "Desktop app or Docker — what’s the difference?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Same Louis experience either way. The desktop app (macOS / Windows) bundles a local server plus yt-dlp and ffmpeg — no Docker required. Prefer containers? Pull the same release version from GHCR (ghcr.io/stuartromanek/louis). Desktop listens on http://127.0.0.1:4010; Docker/dev typically uses port 4000."
+                  "text": "Same Louis experience either way. The desktop app (macOS / Windows) bundles a local server plus yt-dlp and ffmpeg — no Docker required. Prefer containers? Pull the same release from GHCR (ghcr.io/stuartromanek/louis), or install the Home Assistant add-on. Desktop listens on http://127.0.0.1:4010; Docker and Home Assistant typically use port 4000."
                 }
               },
               {
@@ -282,18 +322,18 @@
               },
               {
                 "@type": "Question",
-                "name": "What is “Use default client”?",
+                "name": "What does “Use default client” do?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "In the setup wizard (or Settings → Advanced), Use default client prefills Louis’s bundled public Yoto PKCE client ID. The desktop redirect URI is already registered, so you can skip creating an app on yoto.dev. Prefer your own client? Create a public PKCE app, register http://127.0.0.1:4010/api/yoto/auth/callback exactly, paste the client ID, and leave the secret empty."
+                  "text": "It is the easy way to sign Louis into Yoto. Yoto sign-in needs an OAuth client ID — normally you would create a public app on yoto.dev and paste the ID into Louis. Use default client skips that: Louis fills in its own bundled public client ID, with the desktop redirect URI already registered. Click it in the first-run setup wizard, or later under Settings → Advanced, before you Connect. Prefer your own app? Create a public PKCE client at yoto.dev, register http://127.0.0.1:4010/api/yoto/auth/callback exactly, paste the client ID into Louis, and leave the secret empty."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Why do I need a YouTube API key?",
+                "name": "What are the benefits of a YouTube API key?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Louis uses Google’s YouTube Data API v3 to search YouTube. You do not need YouTube login for that — only an API key. Create a Google Cloud project, enable YouTube Data API v3, create an API key, and paste it into setup."
+                  "text": "You do not need one to use Louis. Search works without it — Louis falls back to bundled yt-dlp (slower, with no content filtering on typed search). Add a free YouTube Data API v3 key for faster search, moderate safeSearch on typed queries, and optional Search content filtering (none / moderate / strict) under Settings → Advanced. YouTube login is not required — only the API key from Google Cloud. Paste it in first-run setup or add it later under Settings → Advanced."
                 }
               },
               {
@@ -333,7 +373,7 @@
                 "name": "Is Louis open source? Who built it?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes — code and releases live on GitHub. Louis is an open-source software project from Stuart Romanek."
+                  "text": "Yes — code and releases live on GitHub. Louis is an open-source software project from Stuart Romanek, an internet designer and engineer."
                 }
               }
             ]
@@ -347,43 +387,46 @@
     <header class="hero">
       <div class="hero__stage">
         <div class="hero__visual">
-          <div
-            class="hero__player"
-            data-hero-lottie
-            role="img"
-            aria-label="Louis — a swan playing a trumpet on a Yoto-style player"
-            hidden
-          ></div>
-          <img
-            class="hero__player hero__player--mark"
-            src="/images/louis-yoto.svg"
-            alt="Louis — a swan playing a trumpet on a Yoto-style player"
-            width="357"
-            height="343"
-            decoding="async"
-          />
+          <div class="hero__player-slot">
+            <div
+              class="hero__player"
+              data-hero-lottie
+              role="img"
+              aria-label="Louis — a swan playing a trumpet on a Yoto-style player"
+            ></div>
+            <img
+              class="hero__player hero__player--mark"
+              src="/images/louis-yoto.svg"
+              alt="Louis — a swan playing a trumpet on a Yoto-style player"
+              width="357"
+              height="343"
+              decoding="async"
+            />
+          </div>
         </div>
         <div class="hero__content">
-          <h1 class="logo-wordmark" aria-label="Louis!">
-            <span class="visually-hidden"
-              >Louis — turns YouTube into audio for your Yoto Make Your Own cards</span
-            >
-            <span class="logo-wordmark__letter logo-wordmark__letter--l" style="--i: 0; --tilt: -4deg" aria-hidden="true">L</span>
-            <span class="logo-wordmark__letter logo-wordmark__letter--o" style="--i: 1; --tilt: 3deg" aria-hidden="true">o</span>
-            <span class="logo-wordmark__letter logo-wordmark__letter--u" style="--i: 2; --tilt: -2deg" aria-hidden="true">u</span>
-            <span class="logo-wordmark__letter logo-wordmark__letter--i" style="--i: 3; --tilt: 4deg" aria-hidden="true">i</span>
-            <span class="logo-wordmark__letter logo-wordmark__letter--s" style="--i: 4; --tilt: -3deg" aria-hidden="true">s</span>
-            <span class="logo-wordmark__letter logo-wordmark__letter--bang" style="--i: 5; --tilt: 6deg" aria-hidden="true">!</span>
-          </h1>
-          <p class="hero__chips" aria-label="Yoto, meet YouTube">
-            <span class="chip chip--blue" style="--i: 0; --tilt: -3deg">Yoto,</span>
-            <span class="chip chip--pink" style="--i: 1; --tilt: 2.5deg">meet</span>
-            <span class="chip chip--orange" style="--i: 2; --tilt: -1.5deg">YouTube</span>
-          </p>
+          <div class="hero__brand">
+            <h1 class="logo-wordmark" aria-label="Louis!">
+              <span class="visually-hidden"
+                >Louis — turns YouTube into audio playlists for your Yoto</span
+              >
+              <span class="logo-wordmark__letter logo-wordmark__letter--l" style="--i: 0; --tilt: -4deg" aria-hidden="true">L</span>
+              <span class="logo-wordmark__letter logo-wordmark__letter--o" style="--i: 1; --tilt: 3deg" aria-hidden="true">o</span>
+              <span class="logo-wordmark__letter logo-wordmark__letter--u" style="--i: 2; --tilt: -2deg" aria-hidden="true">u</span>
+              <span class="logo-wordmark__letter logo-wordmark__letter--i" style="--i: 3; --tilt: 4deg" aria-hidden="true">i</span>
+              <span class="logo-wordmark__letter logo-wordmark__letter--s" style="--i: 4; --tilt: -3deg" aria-hidden="true">s</span>
+              <span class="logo-wordmark__letter logo-wordmark__letter--bang" style="--i: 5; --tilt: 6deg" aria-hidden="true">!</span>
+            </h1>
+            <p class="hero__chips" aria-label="Yoto, meet YouTube">
+              <span class="chip chip--blue" style="--i: 0; --tilt: -3deg">Yoto,</span>
+              <span class="chip chip--pink" style="--i: 1; --tilt: 2.5deg">meet</span>
+              <span class="chip chip--orange" style="--i: 2; --tilt: -1.5deg">YouTube</span>
+            </p>
+          </div>
           <p class="hero__tagline hero__reveal" style="--reveal-at: var(--hero-tagline-at)">
-            Louis is a desktop app that turns YouTube into audio for your Yoto Make Your Own
-            cards. Search for tracks, arrange a playlist, then save — Louis downloads, transcodes,
-            and loads the audio onto the blank MYO cards you already own.
+            Louis turns YouTube into audio playlists for your Yoto. Search or paste a link,
+            arrange tracks, then Update — Louis downloads and transcodes. Link the playlist to a
+            physical Make Your Own card in the Yoto app.
           </p>
           <div class="hero__cta">
             <div class="hero__cta-primary">
@@ -396,11 +439,11 @@
                 <span class="maru-button__label">Download</span>
               </a>
               <div class="hero__cta-links hero__reveal" style="--reveal-at: var(--hero-cta2-at)">
-                <a class="maru-secondary maru-secondary--down" href="#install">
-                  All downloads
+                <a class="maru-secondary maru-secondary--down" href="#how">
+                  See how it works
                 </a>
-                <a class="maru-secondary maru-secondary--down-double" href="#install-mac">
-                  How to install
+                <a class="maru-secondary maru-secondary--down-double" href="#install">
+                  All downloads
                 </a>
               </div>
             </div>
@@ -410,6 +453,365 @@
     </header>
 
     <main id="main">
+      <section id="how" class="section section--candy">
+        <div class="section__inner section__inner--wide">
+          <h2 class="maru-heading maru-heading--lg maru-heading--blue section__title">
+            <span class="maru-heading__label" data-outline="How it works">How it works</span>
+          </h2>
+          <p class="section__lede">
+            Search YouTube, add tracks to a playlist, then listen on your Yoto. Louis saves the
+            playlist to your account — you link a physical Make Your Own card in the
+            <a href="https://my.yotoplay.com/">Yoto app</a>.
+          </p>
+          <ol class="howto">
+            <li class="howto__beat">
+              <span class="howto__sticker" aria-hidden="true">
+                <svg class="howto__sticker-svg" viewBox="0 0 96 96" focusable="false">
+                  <defs>
+                    <path id="howto-seal-1" d="M 18 40 A 36 36 0 0 1 78 40" />
+                  </defs>
+                  <circle cx="51.5" cy="51.5" r="40" fill="var(--color-maru-black)" />
+                  <circle cx="48" cy="48" r="40" fill="var(--sticker-ring)" />
+                  <circle cx="48" cy="48" r="40" fill="none" stroke="var(--color-maru-black)" stroke-width="4" />
+                  <circle cx="48" cy="48" r="19" fill="var(--color-maru-white)" stroke="var(--color-maru-black)" stroke-width="3.5" />
+                  <text class="howto__sticker-arc">
+                    <textPath href="#howto-seal-1" startOffset="50%" text-anchor="middle">STEP</textPath>
+                  </text>
+                  <text class="howto__sticker-num" x="48" y="49" text-anchor="middle">1</text>
+                </svg>
+              </span>
+              <figure class="howto__window">
+                <img
+                  class="howto__art"
+                  src="/images/howto/search.png"
+                  alt="Magnifying glass over a search window"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="howto__copy">
+                <h3 class="howto__title maru-heading maru-heading--lg">
+                  <span class="maru-heading__label" data-outline="Search">Search</span>
+                </h3>
+                <p class="howto__body">
+                  Find a song, show, or artist — or paste a YouTube video, playlist, or channel
+                  link.
+                </p>
+              </div>
+            </li>
+            <li class="howto__beat">
+              <span class="howto__sticker" aria-hidden="true">
+                <svg class="howto__sticker-svg" viewBox="0 0 96 96" focusable="false">
+                  <defs>
+                    <path id="howto-seal-2" d="M 18 40 A 36 36 0 0 1 78 40" />
+                  </defs>
+                  <circle cx="51.5" cy="51.5" r="40" fill="var(--color-maru-black)" />
+                  <circle cx="48" cy="48" r="40" fill="var(--sticker-ring)" />
+                  <circle cx="48" cy="48" r="40" fill="none" stroke="var(--color-maru-black)" stroke-width="4" />
+                  <circle cx="48" cy="48" r="19" fill="var(--color-maru-white)" stroke="var(--color-maru-black)" stroke-width="3.5" />
+                  <text class="howto__sticker-arc">
+                    <textPath href="#howto-seal-2" startOffset="50%" text-anchor="middle">STEP</textPath>
+                  </text>
+                  <text class="howto__sticker-num" x="48" y="49" text-anchor="middle">2</text>
+                </svg>
+              </span>
+              <figure class="howto__window">
+                <img
+                  class="howto__art"
+                  src="/images/howto/add.png"
+                  alt="App window loading a track onto a playlist"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="howto__copy">
+                <h3 class="howto__title maru-heading maru-heading--lg">
+                  <span class="maru-heading__label" data-outline="Add">Add</span>
+                </h3>
+                <p class="howto__body">
+                  Drag tracks into a playlist on desktop, or tap Add on a phone. New names the
+                  playlist and creates it on Yoto right away.
+                </p>
+              </div>
+            </li>
+            <li class="howto__beat">
+              <span class="howto__sticker" aria-hidden="true">
+                <svg class="howto__sticker-svg" viewBox="0 0 96 96" focusable="false">
+                  <defs>
+                    <path id="howto-seal-3" d="M 18 40 A 36 36 0 0 1 78 40" />
+                  </defs>
+                  <circle cx="51.5" cy="51.5" r="40" fill="var(--color-maru-black)" />
+                  <circle cx="48" cy="48" r="40" fill="var(--sticker-ring)" />
+                  <circle cx="48" cy="48" r="40" fill="none" stroke="var(--color-maru-black)" stroke-width="4" />
+                  <circle cx="48" cy="48" r="19" fill="var(--color-maru-white)" stroke="var(--color-maru-black)" stroke-width="3.5" />
+                  <text class="howto__sticker-arc">
+                    <textPath href="#howto-seal-3" startOffset="50%" text-anchor="middle">STEP</textPath>
+                  </text>
+                  <text class="howto__sticker-num" x="48" y="49" text-anchor="middle">3</text>
+                </svg>
+              </span>
+              <figure class="howto__window">
+                <img
+                  class="howto__art"
+                  src="/images/howto/listen.png"
+                  alt="Smiling face listening on headphones"
+                  width="512"
+                  height="512"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="howto__copy">
+                <h3 class="howto__title maru-heading maru-heading--lg">
+                  <span class="maru-heading__label" data-outline="Listen">Listen</span>
+                </h3>
+                <p class="howto__body">
+                  Update saves the audio to Yoto. Reopen, rename, and update playlists you’ve
+                  already made.
+                </p>
+              </div>
+            </li>
+          </ol>
+          <figure class="demo">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              width="1864"
+              height="1080"
+            >
+              <source src="/video/compressed_louis-overview.mp4" type="video/mp4" />
+            </video>
+            <figcaption class="demo__caption">
+              <p class="demo__caption-title maru-heading maru-heading--lg maru-heading--yellow-light">
+                <span class="maru-heading__label" data-outline="Search, add, save"
+                  >Search, add, save</span
+                >
+              </p>
+              <p class="demo__caption-body">
+                Watch Louis end to end: search or paste a YouTube link, add tracks to a playlist,
+                reorder slats, then Update. Louis downloads and transcodes the audio so it’s ready
+                on your Yoto.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="features" class="section section--sky">
+        <div class="section__inner section__inner--wide">
+          <h2 class="maru-heading maru-heading--lg maru-heading--coral section__title">
+            <span class="maru-heading__label" data-outline="Features">Features</span>
+          </h2>
+          <p class="section__lede">
+            Paste a whole playlist URL, draw 16×16 icons, trim intros, split long videos — then
+            Update. Same Louis on desktop, Docker, or Home Assistant.
+          </p>
+          <ul class="feature-list">
+            <li class="feature">
+              <figure class="feature__figure">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  width="1920"
+                  height="1080"
+                  title="Drop a YouTube link into Search — a video, playlist, or channel"
+                >
+                  <source src="/video/compressed_youtube-shortcuts.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <h3 class="feature__title">Paste a video, playlist, or channel</h3>
+              <p class="feature__body">
+                Drop a YouTube link into Search. A video or Shorts opens ready to add; a public
+                playlist or channel loads those videos, pre-checked, so you can drag (desktop) or
+                Add (phone) the group together.
+              </p>
+            </li>
+            <li class="feature">
+              <figure class="feature__figure">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  width="1916"
+                  height="1080"
+                  title="Playlist Artwork flyout with a 5 by 7 generated cover"
+                >
+                  <source src="/video/compressed_playlist-artwork.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <h3 class="feature__title">Covers for every playlist</h3>
+              <p class="feature__body">
+                New playlists get a generated cover. Open Artwork to generate another, upload, or
+                crop a 5×7 image for Yoto.
+              </p>
+            </li>
+            <li class="feature">
+              <figure class="feature__figure">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  width="1920"
+                  height="1080"
+                  title="Track Art Editor — Yoto icons, yotoicons.com, or Draw"
+                >
+                  <source src="/video/compressed_track-art.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <h3 class="feature__title">16×16 track art</h3>
+              <p class="feature__body">
+                Set the icon on the player per track: Yoto’s library,
+                <a href="https://yotoicons.com/">yotoicons.com</a>, an upload, or Draw on a pixel
+                canvas.
+              </p>
+            </li>
+            <li class="feature">
+              <figure class="feature__figure">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  width="1920"
+                  height="1080"
+                  title="Trim flyout with a waveform, in and out times, and Play"
+                >
+                  <source src="/video/compressed_trim.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <h3 class="feature__title">Trim the bits you don’t want</h3>
+              <p class="feature__body">
+                Scissors on a YouTube track (or a split group) keeps a region of the full source.
+                Waveform and preview live in a flyout on desktop, a tray on a phone.
+              </p>
+            </li>
+            <li class="feature">
+              <figure class="feature__figure">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  width="1920"
+                  height="1080"
+                  title="A long YouTube source split into connected Part 1 and Part 2 slats"
+                >
+                  <source src="/video/compressed_autosplit.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <h3 class="feature__title">Long videos become parts</h3>
+              <p class="feature__body">
+                Sources over 55 minutes expand into connected Part 1 / Part 2 slats. Louis
+                downloads once, then splits into legal Yoto chapters. Move or delete the group
+                together.
+              </p>
+            </li>
+            <li class="feature">
+              <figure class="feature__figure">
+                <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  width="1920"
+                  height="1080"
+                  title="Update overlay asking to normalize new track levels"
+                >
+                  <source src="/video/compressed_normalize.mp4" type="video/mp4" />
+                </video>
+              </figure>
+              <h3 class="feature__title">Level new tracks</h3>
+              <p class="feature__body">
+                When Update downloads YouTube audio, you can normalize those new extracts. Tracks
+                already on the playlist stay as they are.
+              </p>
+            </li>
+            <li class="feature feature--wide">
+              <div class="feature__phones">
+                <figure class="feature__figure">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    width="508"
+                    height="1080"
+                    title="Louis on a phone: Search tab with YouTube results"
+                  >
+                    <source src="/video/compressed_phone-search.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption class="feature__caption">Search YouTube or paste a link.</figcaption>
+                </figure>
+                <figure class="feature__figure">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    width="508"
+                    height="1080"
+                    title="Louis on a phone: Library playlist fan"
+                  >
+                    <source src="/video/compressed_phone-library.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption class="feature__caption">Browse playlists in Library.</figcaption>
+                </figure>
+                <figure class="feature__figure">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    width="508"
+                    height="1080"
+                    title="Louis on a phone: Add to playlist drawer"
+                  >
+                    <source src="/video/compressed_phone-add.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption class="feature__caption">Add tracks from the drawer.</figcaption>
+                </figure>
+                <figure class="feature__figure">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    width="508"
+                    height="1080"
+                    title="Louis on a phone: Menu with Update pending and Add to Home"
+                  >
+                    <source src="/video/compressed_phone-menu.mp4" type="video/mp4" />
+                  </video>
+                  <figcaption class="feature__caption">Update every pending playlist in Menu.</figcaption>
+                </figure>
+              </div>
+              <h3 class="feature__title">Built for phones too</h3>
+              <p class="feature__body">
+                Self-host on your LAN and the layout under 600px is Search / Library, an Add
+                drawer, and Menu Update — including every pending playlist at once. Add to Home
+                puts Louis on the home screen.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section id="install" class="section section--cream">
         <div class="section__inner">
           <h2 class="maru-heading maru-heading--lg maru-heading--coral section__title">
@@ -848,6 +1250,15 @@
             On first launch, Louis walks through a short setup wizard. You need a YouTube Data API
             key. For Yoto, prefer Louis’s built-in default client — no yoto.dev app required.
           </p>
+          <figure class="setup__figure">
+            <img
+              src="/images/product/desktop-setup.webp"
+              alt="Louis first-run setup wizard with Use default client for the Yoto PKCE client ID"
+              width="1600"
+              height="1000"
+              loading="lazy"
+            />
+          </figure>
           <ol class="steps">
             <li class="step">
               <div>
@@ -916,7 +1327,7 @@
                   With the default client, the wizard skips the OAuth redirect step. Confirm you’re
                   ready and press <strong>Let’s go</strong>. Louis saves keys locally and restarts.
                   Use <strong>Connect</strong> to sign in with Yoto in your system browser — then
-                  search, arrange, and save to your MYO cards.
+                  search, arrange, and Update playlists.
                 </p>
               </div>
             </li>
@@ -924,19 +1335,58 @@
         </div>
       </section>
 
-      <section id="docker" class="section section--sky">
+      <section id="run" class="section section--sky">
         <div class="section__inner">
           <h2 class="maru-heading maru-heading--lg maru-heading--blue section__title">
-            <span class="maru-heading__label" data-outline="Docker">Docker</span>
+            <span class="maru-heading__label" data-outline="Run it your way">Run it your way</span>
           </h2>
           <p class="section__lede">
-            Prefer containers? The same release ships on GHCR — Node, yt-dlp, and ffmpeg included.
+            Same Louis everywhere — desktop installers, Docker, or a Home Assistant add-on.
           </p>
+          <ul class="run-list">
+            <li class="run">
+              <p class="run__kicker">Mac &amp; Windows</p>
+              <h3 class="run__title">Desktop app</h3>
+              <p class="run__body">
+                Bundled yt-dlp and ffmpeg. No Docker.
+                <a href="#install">Download an installer</a>
+                and follow
+                <a href="#install-mac">macOS</a>
+                or
+                <a href="#install-windows">Windows</a>
+                if Gatekeeper or SmartScreen warns.
+              </p>
+            </li>
+            <li class="run" id="docker">
+              <p class="run__kicker">GHCR</p>
+              <h3 class="run__title">Docker</h3>
+              <p class="run__body">
+                Multi-arch image (amd64 + arm64). Open Louis at port
+                <span class="mono">4000</span>
+                on the host other devices actually use — not the machine’s localhost from a phone.
+              </p>
+            </li>
+            <li class="run">
+              <p class="run__kicker">Supervisor</p>
+              <h3 class="run__title">Home Assistant</h3>
+              <p class="run__body">
+                Add
+                <span class="mono">https://github.com/stuartromanek/louis</span>
+                as an add-on repository, install <strong>Louis</strong>, then open
+                <span class="mono">http://homeassistant.local:4000</span>.
+                Do not use ingress.
+              </p>
+            </li>
+          </ul>
           <pre class="pre"><code>docker pull ghcr.io/stuartromanek/louis:latest
 # pin: ghcr.io/stuartromanek/louis:vX.Y.Z</code></pre>
           <p class="note">
-            Full compose and env setup lives in the
+            Compose, env, and Portainer notes live in the
             <a href="https://github.com/stuartromanek/louis#quick-start-docker">app README</a>.
+            Home Assistant options:
+            <a href="https://github.com/stuartromanek/louis/blob/main/homeassistant/louis/DOCS.md"
+              >add-on docs</a
+            >.
           </p>
         </div>
       </section>
@@ -955,10 +1405,75 @@
               <summary class="faq__question">What is Louis?</summary>
               <div class="faq__answer">
                 <p>
-                  Louis is a desktop (and self-hosted) app that turns YouTube into audio for your
-                  Yoto <strong>Make Your Own (MYO)</strong> cards. You search YouTube, arrange a
-                  playlist, then save — Louis downloads, transcodes, and loads the audio onto blank
-                  MYO cards you already own.
+                  Louis is a desktop (and self-hosted) app that turns YouTube into audio
+                  <strong>playlists</strong> for your Yoto. You search or paste a link, arrange a
+                  playlist, then Update — Louis downloads and transcodes. Linking a physical
+                  <strong>Make Your Own (MYO)</strong> card stays in the Yoto app.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Does Louis put audio on the physical card?</summary>
+              <div class="faq__answer">
+                <p>
+                  No. Louis edits playlists on your Yoto account. Linking a playlist to a physical
+                  Make Your Own card happens in the
+                  <a href="https://my.yotoplay.com/">Yoto app</a>, not in Louis.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Can I use Louis on a phone?</summary>
+              <div class="faq__answer">
+                <p>
+                  The desktop app is macOS and Windows. If you
+                  <a href="#run">self-host</a>
+                  with Docker or Home Assistant on your LAN, the same app has a phone layout
+                  (Search / Library / Add to playlist). <strong>Add to Home</strong> installs it
+                  like an app. There is no native iOS or Android download.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">What about hour-long videos?</summary>
+              <div class="faq__answer">
+                <p>
+                  YouTube sources over 55 minutes split into connected Part 1 / Part 2 tracks so
+                  they fit Yoto’s chapter limit. Trim first if you only want a region — Louis
+                  keeps that slice and re-splits only if it is still too long.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Can I set the icons on the player?</summary>
+              <div class="faq__answer">
+                <p>
+                  Yes. The Track Art Editor sets a 16×16 icon per track from the Yoto icon
+                  library,
+                  <a href="https://yotoicons.com/">yotoicons.com</a>, an upload, or a pixel Draw
+                  canvas. If icon save is denied, reconnect Yoto so Louis can request the
+                  <span class="mono">user:icons:manage</span> scope.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Can I run Louis in Home Assistant?</summary>
+              <div class="faq__answer">
+                <p>
+                  Yes. Add
+                  <span class="mono">https://github.com/stuartromanek/louis</span>
+                  as a Supervisor add-on repository, install <strong>Louis</strong>, and open
+                  <span class="mono">http://homeassistant.local:4000</span>.
+                  Do <strong>not</strong> use Home Assistant ingress — it breaks Yoto sign-in.
+                  Options:
+                  <a href="https://github.com/stuartromanek/louis/blob/main/homeassistant/louis/DOCS.md"
+                    >add-on docs</a
+                  >.
                 </p>
               </div>
             </details>
@@ -967,8 +1482,8 @@
               <summary class="faq__question">What do I need before I start?</summary>
               <div class="faq__answer">
                 <p>
-                  A Mac or Windows PC (or Docker), a
-                  <a href="https://yotoplay.com/">Yoto</a> account with MYO cards, a free
+                  A Mac or Windows PC (or Docker / Home Assistant), a
+                  <a href="https://yotoplay.com/">Yoto</a> account, a free
                   <strong>YouTube Data API v3</strong> key from Google Cloud, and — for Yoto sign-in —
                   either Louis’s <strong>Use default client</strong> button or your own public PKCE
                   client from
@@ -995,9 +1510,11 @@
                 <p>
                   Same Louis experience either way. The <strong>desktop app</strong> (macOS / Windows)
                   bundles a local server plus yt-dlp and ffmpeg — no Docker required. Prefer
-                  containers? Pull the same release version from GHCR
-                  (<span class="mono">ghcr.io/stuartromanek/louis</span>). Desktop listens on
-                  <span class="mono">http://127.0.0.1:4010</span>; Docker/dev typically uses port
+                  containers? Pull the same release from GHCR
+                  (<span class="mono">ghcr.io/stuartromanek/louis</span>) or install the
+                  <a href="#run">Home Assistant add-on</a>. Desktop listens on
+                  <span class="mono">http://127.0.0.1:4010</span>; Docker and Home Assistant
+                  typically use port
                   <span class="mono">4000</span>.
                 </p>
               </div>
@@ -1038,29 +1555,43 @@
             </details>
 
             <details class="faq__item">
-              <summary class="faq__question">What is “Use default client”?</summary>
+              <summary class="faq__question">What does “Use default client” do?</summary>
               <div class="faq__answer">
                 <p>
-                  In the setup wizard (or <strong>Settings → Advanced</strong>),
-                  <strong>Use default client</strong> prefills Louis’s bundled public Yoto PKCE
-                  client ID. The desktop redirect URI is already registered, so you can skip creating
-                  an app on yoto.dev. Prefer your own client? Create a public PKCE app, register
+                  It’s the easy way to sign Louis into Yoto. Yoto sign-in needs an OAuth
+                  <strong>client ID</strong> — normally you’d create a public app on
+                  <a href="https://yoto.dev/get-started/start-here/">yoto.dev</a> and paste the ID
+                  into Louis. <strong>Use default client</strong> skips that: Louis fills in its
+                  own bundled public client ID, with the desktop redirect URI already registered.
+                </p>
+                <p>
+                  Click it in the first-run setup wizard, or later under
+                  <strong>Settings → Advanced</strong>, before you hit Connect.
+                </p>
+                <p>
+                  Prefer your own app? Create a <strong>public</strong> (PKCE) client at yoto.dev,
+                  register
                   <span class="mono">http://127.0.0.1:4010/api/yoto/auth/callback</span>
-                  exactly, paste the client ID, and leave the secret empty.
+                  exactly, paste the client ID into Louis, and leave the secret empty.
                 </p>
               </div>
             </details>
 
             <details class="faq__item">
-              <summary class="faq__question">Why do I need a YouTube API key?</summary>
+              <summary class="faq__question">What are the benefits of a YouTube API key?</summary>
               <div class="faq__answer">
                 <p>
-                  Louis uses Google’s <strong>YouTube Data API v3</strong> to search YouTube. You do
-                  <strong>not</strong> need YouTube login for that — only an API key. Create a Google
-                  Cloud project, enable YouTube Data API v3, create an API key, and paste it into
-                  setup. See the
+                  You don’t need one to use Louis. Search works without it — Louis falls back to
+                  bundled yt-dlp (a bit slower, with no content filtering on typed search).
+                </p>
+                <p>
+                  Add a free <strong>YouTube Data API v3</strong> key if you want faster search,
+                  moderate <strong>safeSearch</strong> on typed queries, and optional
+                  <strong>Search content filtering</strong> (none / moderate / strict) under
+                  <strong>Settings → Advanced</strong>. YouTube login is not required — only the
+                  API key from Google Cloud. Paste it in the
                   <a href="#setup">first-time setup</a>
-                  steps and Google’s
+                  wizard or add it later under Settings. See Google’s
                   <a href="https://developers.google.com/youtube/v3/getting-started"
                     >getting started guide</a
                   >.
@@ -1125,7 +1656,8 @@
                   Yes — code and releases live on
                   <a href="https://github.com/stuartromanek/louis">GitHub</a>.
                   Louis is an open-source software project from
-                  <a href="https://romanek.us" rel="noopener noreferrer">Stuart Romanek</a>.
+                  <a href="https://romanek.us" rel="noopener noreferrer">Stuart Romanek</a>, an
+                  internet designer and engineer.
                 </p>
               </div>
             </details>
@@ -1148,7 +1680,10 @@
           Yoto, meet YouTube.
         </p>
         <nav class="footer__links" aria-label="Louis links">
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
           <a href="https://github.com/stuartromanek/louis">GitHub</a>
+          <a href="https://github.com/stuartromanek/louis/blob/main/CHANGELOG.md">Changelog</a>
           <a href="https://github.com/stuartromanek/louis/releases/latest">Releases</a>
           <a href="https://github.com/stuartromanek/louis/blob/main/docs/DESKTOP.md">Desktop docs</a>
         </nav>
