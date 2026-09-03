@@ -245,7 +245,7 @@
                 "name": "What do I need before I start?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A Mac or Windows PC (or Docker / Home Assistant), a Yoto account, a free YouTube Data API v3 key from Google Cloud, and — for Yoto sign-in — either Louis’s Use default client button or your own public PKCE client from yoto.dev."
+                  "text": "A Mac or Windows PC (or Docker / Home Assistant), a Yoto account, and — for Yoto sign-in — either Louis’s Use default client button or your own public PKCE client from yoto.dev. A free YouTube Data API v3 key from Google Cloud is recommended for faster search and content filtering, but optional — Skip uses bundled yt-dlp."
                 }
               },
               {
@@ -591,7 +591,7 @@
               </p>
               <p class="demo__caption-body">
                 Watch Louis end to end: search or paste a YouTube link, add tracks to a playlist,
-                reorder slats, then Update. Louis downloads and transcodes the audio so it’s ready
+                reorder tracks, then Update. Louis downloads and transcodes the audio so it’s ready
                 on your Yoto.
               </p>
             </figcaption>
@@ -713,8 +713,8 @@
               <h3 class="feature__title">Long videos become parts</h3>
               <p class="feature__body">
                 Sources over 55 minutes expand into connected Part 1 / Part 2 slats. Louis
-                downloads once, then splits into legal Yoto chapters. Move or delete the group
-                together.
+                downloads once, then splits into tracks that fit Yoto’s chapter limit. Move or
+                delete the group together.
               </p>
             </li>
             <li class="feature">
@@ -1249,8 +1249,10 @@
             >
           </h2>
           <p class="section__lede">
-            On first launch, Louis walks through a short setup wizard. You need a YouTube Data API
-            key. For Yoto, prefer Louis’s built-in default client — no yoto.dev app required.
+            On first launch, Louis walks through a short setup wizard. A YouTube Data API key is
+            recommended (faster search and content filtering) — you can Skip and add one later under
+            Settings → Advanced. For Yoto, prefer Louis’s built-in default client — no yoto.dev app
+            required.
           </p>
           <figure class="setup__figure">
             <video
@@ -1292,7 +1294,10 @@
               <div>
                 <h3 class="step__title">YouTube Data API</h3>
                 <p class="step__body">
-                  Louis needs a Google API key to search YouTube. YouTube login is
+                  A YouTube Data API key is <strong>recommended</strong> for faster search and
+                  content filtering. You can Skip in the wizard and search with Louis’s bundled
+                  download tools instead — or add a key later under
+                  <strong>Settings → Advanced</strong>. YouTube login is
                   <strong>not</strong> required — only an API key.
                 </p>
                 <p class="step__body">
@@ -1488,11 +1493,14 @@
               <div class="faq__answer">
                 <p>
                   A Mac or Windows PC (or Docker / Home Assistant), a
-                  <a href="https://yotoplay.com/">Yoto</a> account, a free
-                  <strong>YouTube Data API v3</strong> key from Google Cloud, and — for Yoto sign-in —
+                  <a href="https://yotoplay.com/">Yoto</a> account, and — for Yoto sign-in —
                   either Louis’s <strong>Use default client</strong> button or your own public PKCE
                   client from
-                  <a href="https://yoto.dev/get-started/start-here/">yoto.dev</a>.
+                  <a href="https://yoto.dev/get-started/start-here/">yoto.dev</a>. A free
+                  <strong>YouTube Data API v3</strong> key from Google Cloud is
+                  <strong>recommended</strong> (faster search and content filtering) but optional —
+                  Skip uses bundled yt-dlp, and you can add a key later under
+                  <strong>Settings → Advanced</strong>.
                 </p>
               </div>
             </details>

@@ -16,7 +16,7 @@ Louis is an open-source desktop and self-hosted app for personal use. Search You
 - Desktop local server: `http://127.0.0.1:4010`
 - Docker / Home Assistant: port `4000` (not Home Assistant ingress)
 - Bundled yt-dlp and ffmpeg in the desktop app
-- First-run setup: prefer **Use default client** for Yoto (public PKCE); requires a YouTube Data API v3 key
+- First-run setup: prefer **Use default client** for Yoto (public PKCE); a YouTube Data API v3 key is recommended (faster search) but optional — Skip uses bundled yt-dlp
 - Builds are currently unsigned (Gatekeeper / SmartScreen expected)
 
 ## Installers (GitHub Releases)
