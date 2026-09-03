@@ -1789,12 +1789,20 @@ code,
   box-shadow: var(--shadow-maru-sm);
 }
 
-.setup__figure img {
+.setup__figure img,
+.setup__figure video {
   width: 100%;
   height: auto;
+  display: block;
+}
+
+.setup__figure img {
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  display: block;
+}
+
+.setup__figure video {
+  background: var(--color-maru-black);
 }
 
 /* ─── Run it your way ─── */
