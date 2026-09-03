@@ -438,6 +438,20 @@ code,
   width: min(92vw, 30rem);
   aspect-ratio: 1;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+@media (width >= 600px) {
+  .hero__player-slot:not([data-hero-ready]) {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .hero__player-slot[data-hero-ready] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.35s var(--ease-out);
+  }
 }
 
 .hero__player {
@@ -452,28 +466,30 @@ code,
 .hero__player-slot [data-hero-lottie] {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  clip-path: inset(0 0 100% 0);
+}
+
+.hero__player-slot [data-hero-lottie] svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hero__player-slot [data-hero-lottie]:not([data-ready]) svg {
+  visibility: hidden;
 }
 
 .hero__player-slot [data-hero-lottie][data-ready] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  animation: hero-player-in 0.55s var(--ease-out) both;
-}
-
-@keyframes hero-player-in {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  clip-path: none;
 }
 
 .hero__player svg {
@@ -493,9 +509,9 @@ code,
   object-fit: contain;
 }
 
-.hero__player-slot [data-hero-lottie][data-ready] ~ .hero__player--mark {
-  visibility: hidden;
+.hero__player-slot[data-lottie-ready] .hero__player--mark {
   opacity: 0;
+  visibility: hidden;
 }
 
 .hero__player--failed {
@@ -717,10 +733,6 @@ code,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__player-slot [data-hero-lottie][data-ready] {
-    animation: none;
-  }
-
   .logo-wordmark__letter,
   .chip,
   .hero__reveal {
