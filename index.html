@@ -325,7 +325,7 @@
                 "name": "What does “Use default client” do?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "It is the easy way to sign Louis into Yoto. Yoto sign-in needs an OAuth client ID — normally you would create a public app on yoto.dev and paste the ID into Louis. Use default client skips that: Louis fills in its own bundled public client ID, with the desktop redirect URI already registered. Click it in the first-run setup wizard, or later under Settings → Advanced, before you Connect. Prefer your own app? Create a public PKCE client at yoto.dev, register http://127.0.0.1:4010/api/yoto/auth/callback exactly, paste the client ID into Louis, and leave the secret empty."
+                  "text": "It is the easy way to sign Louis into Yoto. Yoto sign-in needs an OAuth client ID — normally you would create a public app on yoto.dev and paste the ID into Louis. Use default client skips that: Louis fills in its own bundled public client ID, with the desktop redirect URI already registered. Click it in the first-run setup wizard, or later under Settings → Advanced, before you Connect. Prefer your own app? Create a public PKCE client at yoto.dev, paste http://127.0.0.1:4010/api/yoto/auth/callback into Allowed Callback URLs (desktop port 4010; Docker/HA use 4000), paste the client ID into Louis, and leave the secret empty."
                 }
               },
               {
@@ -333,7 +333,7 @@
                 "name": "What are the benefits of a YouTube API key?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "You do not need one to use Louis. Search works without it — Louis falls back to bundled yt-dlp (slower, with no content filtering on typed search). Add a free YouTube Data API v3 key for faster search, moderate safeSearch on typed queries, and optional Search content filtering (none / moderate / strict) under Settings → Advanced. YouTube login is not required — only the API key from Google Cloud. Paste it in first-run setup or add it later under Settings → Advanced."
+                  "text": "You do not need one to use Louis. Search works without it — Louis falls back to bundled yt-dlp (slower, with no content filtering on typed search). Add a free YouTube Data API v3 key for faster search, moderate safeSearch on typed queries, and optional Search content filtering (none / moderate / strict) under Settings → Advanced. YouTube login is not required — only the API key from Google Cloud. If Google asks what data you will access, choose Public data (not User data). Paste it in first-run setup or add it later under Settings → Advanced."
                 }
               },
               {
@@ -357,7 +357,7 @@
                 "name": "Downloads fail with a bot check or age gate — what now?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Open Settings → Advanced and set an optional Netscape cookies.txt path for yt-dlp. Prefer a throwaway Google account; never share or commit that file. Keep Louis updated — releases refresh bundled download tools."
+                  "text": "This is YouTube treating Louis’s downloader as a bot (IP/session), not a problem with that video. Wait a few minutes and try again — that often works on a home connection. If it keeps happening, or you’re on a cloud host, open Settings → Advanced and set an optional Netscape cookies.txt path for yt-dlp. Prefer a throwaway Google account; never share or commit that file. Keep Louis updated — releases refresh bundled download tools."
                 }
               },
               {
@@ -1279,8 +1279,9 @@
                 </p>
                 <p class="step__body">
                   Prefer your own client? Create a <strong>public</strong> (PKCE) app at yoto.dev,
-                  register this redirect URI exactly, paste the client ID, and leave the secret
-                  empty:
+                  paste this URI into <strong>Allowed Callback URLs</strong> exactly (desktop uses
+                  port <strong>4010</strong> — Docker / Home Assistant use <strong>4000</strong>),
+                  paste the client ID, and leave the secret empty:
                 </p>
                 <div class="redirect">
                   <code class="redirect__value">http://127.0.0.1:4010/api/yoto/auth/callback</code>
@@ -1316,10 +1317,13 @@
                 </p>
                 <p class="step__body">
                   3. Go to
-                  <a href="https://console.cloud.google.com/apis/credentials">Credentials</a>,
-                  click <strong>Create credentials → API key</strong>, copy the key, and paste it
-                  into Louis’s setup form. Restricting the key to YouTube Data API v3 is optional
-                  but smart.
+                  <a href="https://console.cloud.google.com/apis/credentials">Credentials</a>.
+                  If Google asks <strong>What data will you be accessing?</strong>, choose
+                  <strong>Public data</strong> (not User data) — Louis only needs an API key for
+                  public video search, not Google user login. Then
+                  <strong>Create credentials → API key</strong>, copy the key, and paste it into
+                  Louis’s setup form. Restricting the key to YouTube Data API v3 is optional but
+                  smart.
                 </p>
                 <p class="step__body">
                   Stuck? Google’s
@@ -1583,9 +1587,11 @@
                 </p>
                 <p>
                   Prefer your own app? Create a <strong>public</strong> (PKCE) client at yoto.dev,
-                  register
+                  paste
                   <span class="mono">http://127.0.0.1:4010/api/yoto/auth/callback</span>
-                  exactly, paste the client ID into Louis, and leave the secret empty.
+                  into <strong>Allowed Callback URLs</strong> (desktop uses port
+                  <strong>4010</strong>; Docker / HA use <strong>4000</strong>), paste the client
+                  ID into Louis, and leave the secret empty.
                 </p>
               </div>
             </details>
@@ -1602,7 +1608,8 @@
                   moderate <strong>safeSearch</strong> on typed queries, and optional
                   <strong>Search content filtering</strong> (none / moderate / strict) under
                   <strong>Settings → Advanced</strong>. YouTube login is not required — only the
-                  API key from Google Cloud. Paste it in the
+                  API key from Google Cloud. If Google asks what data you will access, choose
+                  <strong>Public data</strong> (not User data). Paste it in the
                   <a href="#setup">first-time setup</a>
                   wizard or add it later under Settings. See Google’s
                   <a href="https://developers.google.com/youtube/v3/getting-started"
@@ -1644,7 +1651,10 @@
               </summary>
               <div class="faq__answer">
                 <p>
-                  Open <strong>Settings → Advanced</strong> and set an optional Netscape
+                  This is YouTube treating Louis’s downloader as a bot (IP/session), not a problem
+                  with that video. Wait a few minutes and try again — that often works on a home
+                  connection. If it keeps happening, or you’re on a cloud host, open
+                  <strong>Settings → Advanced</strong> and set an optional Netscape
                   <span class="mono">cookies.txt</span> path for yt-dlp. Prefer a throwaway Google
                   account; never share or commit that file. Keep Louis updated — releases refresh
                   bundled download tools.
